@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FavoritesFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/sectionTitlePlayers"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/color_primary"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:layout_width="176dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            style="@style/HeadlineMediumOnColorLeft"/>
+
+
+        <ImageView
+            android:id="@+id/editIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sectionTitlePlayers"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/recycler_viewP"
+        android:text="@string/favorite_title1"/>
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@id/sectionTitlePlayers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintHeight="312dp"
+        android:id="@+id/recycler_viewP"
+        android:background="@color/surface_surface_0"
+        android:nestedScrollingEnabled="false"
+        android:padding="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sectionTitleTeams"
+        app:layout_constraintTop_toBottomOf="@id/recycler_viewP"
+        app:layout_constraintBottom_toTopOf="@id/recycler_viewT"
+        android:text="@string/favorite_title2"/>
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@id/sectionTitleTeams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintHeight="312dp"
+        android:id="@+id/recycler_viewT"
+        android:background="@color/surface_surface_0"
+        android:padding="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

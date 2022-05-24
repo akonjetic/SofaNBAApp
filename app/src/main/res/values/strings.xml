@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">SofaNBAApp</string>
+    <string name="app_name">SofaNBA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bottomNavFragment1">EXPLORE</string>
+    <string name="bottomNavFragment2">FAVORITES</string>
+    <string name="bottomNavFragment3">SEASONS</string>
+    <string name="bottomNavFragment4">SETTINGS</string>
+    <string name="inputFieldSearchText">Search</string>
+    <string-array name="headerSelectorValues">
+        <item name="headerSelectorValue1">Players</item>
+        <item name="headerSelectorValue2">Teams</item>
+    </string-array>
+    <string name="favorite_title1">Players</string>
+    <string name="favorite_title2">Teams</string>
+    <string name="explore_title1">All Players</string>
+    <string name="explore_title2">All Teams</string>
+    <string name="color_name_template">team_%1$s_primary</string>
+    <string name="photo_name_team_template">ic_assets_exportable_logos_club_logos_%1$s_conference_%2$s_transparent</string>
 </resources>
+

@@ -10,10 +10,12 @@ import androidx.paging.cachedIn
 import konjetic.sofanbaapp.database.NBADatabase
 import konjetic.sofanbaapp.database.entity.PlayerData
 import konjetic.sofanbaapp.database.entity.TeamData
+import konjetic.sofanbaapp.fragment.MatchResponse
 import konjetic.sofanbaapp.network.Network
 import konjetic.sofanbaapp.network.model.PlayerImgResponse
 import konjetic.sofanbaapp.network.model.PlayersResponse
 import konjetic.sofanbaapp.network.model.TeamResponse
+import konjetic.sofanbaapp.network.paging.MatchPagingSource
 import konjetic.sofanbaapp.network.paging.PlayerPagingSource
 import kotlinx.coroutines.launch
 
@@ -23,6 +25,7 @@ class MainActivityViewModel : ViewModel() {
     val listAllTeams = MutableLiveData<TeamResponse>()
     val favoritePlayersFromDB = MutableLiveData<ArrayList<PlayerData>>()
     val favoriteTeamsFromDB = MutableLiveData<ArrayList<TeamData>>()
+    val listAllGames = MutableLiveData<ArrayList<MatchResponse>>()
 
     val playerImages = MutableLiveData<ArrayList<PlayerImgResponse>>()
     private val tempPlayerImages = arrayListOf<PlayerImgResponse>()
@@ -32,6 +35,9 @@ class MainActivityViewModel : ViewModel() {
         PlayerPagingSource(Network().getBallDontLieService(), this)
     }.flow.cachedIn(viewModelScope)
 
+    val flow2 = Pager(PagingConfig(pageSize = 20)){
+        MatchPagingSource(Network().getBallDontLieService())
+    }.flow.cachedIn(viewModelScope)
 
     fun getListOfSearchedPlayers(search: String){
         viewModelScope.launch {

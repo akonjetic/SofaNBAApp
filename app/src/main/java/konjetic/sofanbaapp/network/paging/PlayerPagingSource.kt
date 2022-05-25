@@ -33,9 +33,6 @@ class PlayerPagingSource(val service1: BallDontLieService, val viewModel: MainAc
                 data = response.data,
                 prevKey = null,
                 nextKey = response.meta.next_page
-                /*data = response.playersResponseData,
-                prevKey = null,
-                nextKey = response.playersResponseMeta.next_page*/
             )
         } catch (e: Exception){
             LoadResult.Error(e)

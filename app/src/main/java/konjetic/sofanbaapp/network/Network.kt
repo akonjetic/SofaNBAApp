@@ -11,7 +11,6 @@ class Network {
 
     private val ballDontLieService: BallDontLieService
     private val ballDontLieUrl = "https://www.balldontlie.io/"
-    /*http://academy-2022.dev.sofascore.com/api/v1/academy/player-image/player/{playerId} */
 
     private val sofaScoreAPIService: SofaScoreAPIService
     private val sofaScoreAPIUrl = "http://academy-2022.dev.sofascore.com/"

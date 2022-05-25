@@ -5,56 +5,46 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.paging.PagingData
+import androidx.recyclerview.widget.LinearLayoutManager
 import konjetic.sofanbaapp.R
+import konjetic.sofanbaapp.activity.MainActivityViewModel
+import konjetic.sofanbaapp.adapter.MatchPagingAdapter
+import konjetic.sofanbaapp.adapter.PlayerPagingAdapter
+import konjetic.sofanbaapp.databinding.FragmentSeasonsBinding
+import konjetic.sofanbaapp.network.paging.MatchDiff
+import konjetic.sofanbaapp.network.paging.PlayerDiff
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SeasonsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SeasonsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val viewModel: MainActivityViewModel by activityViewModels()
+    private var _binding: FragmentSeasonsBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_seasons, container, false)
+        _binding = FragmentSeasonsBinding.inflate(inflater, container, false)
+
+        binding.seasonsRecycler.layoutManager = LinearLayoutManager(requireContext())
+
+        val pagingAdapter = MatchPagingAdapter(requireContext(), MatchDiff)
+        binding.seasonsRecycler.adapter = pagingAdapter
+
+        lifecycleScope.launch {
+            viewModel.flow2.collectLatest {
+                pagingAdapter.submitData(it)
+            }
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SeasonsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SeasonsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

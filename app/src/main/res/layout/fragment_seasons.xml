@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/surface_surface_0"
     tools:context=".fragment.SeasonsFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -28,14 +29,33 @@
             style="@style/HeadlineMediumOnColorLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/mainFragmentTitle3"
             android:layout_marginStart="42dp"/>
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <include
+        android:id="@+id/headerAction"
+        layout="@layout/player_matches_header_filter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <include
+        android:id="@+id/placeholderEmpty"
+        layout="@layout/empty_favorites_player_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintTop_toBottomOf="@id/headerAction"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/headerAction"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/seasonsRecycler"/>

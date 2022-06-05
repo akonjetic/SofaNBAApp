@@ -4,13 +4,13 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_marginVertical="8dp">
+    android:layout_marginBottom="8dp">
 
     <androidx.cardview.widget.CardView
         xmlns:card_view="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="10dp"
+        app:cardElevation="0dp"
         app:cardCornerRadius="16dp"
         card_view:cardUseCompatPadding="true"
         android:background="@color/surface_surface_1">
@@ -20,18 +20,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/playerImage"
-        android:layout_marginVertical="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"/>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/playerImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize12dp" />
 
     <TextView
         android:layout_width="168dp"
         android:layout_height="20dp"
         android:id="@+id/playerName"
+        style="@style/BodyLargeNLv1Left"
         android:layout_toEndOf="@id/playerImage"
         android:layout_marginTop="28dp"/>
 
@@ -39,6 +42,7 @@
         android:layout_width="168dp"
         android:layout_height="20dp"
         android:id="@+id/playerTeam"
+        style="@style/BodyMediumNLv2Left"
         android:layout_below="@id/playerName"
         android:layout_toEndOf="@id/playerImage"
         android:layout_marginTop="4dp"/>
@@ -50,7 +54,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="36dp"
-            android:src="@drawable/favorite_selector"/>
+            android:src="@drawable/favorite_selector"
+            app:tint="@color/color_secondary" />
 
     </RelativeLayout>
     </androidx.cardview.widget.CardView>

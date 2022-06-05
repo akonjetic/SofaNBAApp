@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="20dp">
+
+    <include
+        android:id="@+id/sheetHeader"
+        layout="@layout/bottom_sheet_header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/urlView"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/sheetHeader"
+        android:layout_marginTop="16dp"
+        app:cardElevation="0dp"
+        app:contentPadding="0dp"
+        app:cardBackgroundColor="@color/surface_surface_2"
+        app:cardCornerRadius="4dp">
+
+        <TextView
+            style="@style/AssistivePrimaryLeft"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:text="@string/bottomSheetPlayerHint1"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="16dp"/>
+
+        <EditText
+            android:id="@+id/imageUrl"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="16dp"/>
+
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/urlText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bottomSheetPlayerDescription1"
+
+        style="@style/AssistiveNLv2Left"
+        app:layout_constraintTop_toBottomOf="@id/urlView"
+        android:layout_marginHorizontal="32dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/photoTitleView"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:cardElevation="0dp"
+        app:contentPadding="0dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/urlText"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/surface_surface_2"
+        app:cardCornerRadius="4dp">
+
+        <TextView
+            style="@style/AssistivePrimaryLeft"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/bottomSheetPlayerHint2"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="16dp"/>
+
+        <EditText
+            android:id="@+id/imageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="16dp"/>
+
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Type a photo title, ie. ´´LeBron Headshot´´"
+        style="@style/AssistiveNLv2Left"
+        app:layout_constraintTop_toBottomOf="@id/photoTitleView"
+        android:layout_marginHorizontal="32dp"/>
+
+    <include
+        android:id="@+id/buttons"
+        layout="@layout/bottom_sheet_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="54dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

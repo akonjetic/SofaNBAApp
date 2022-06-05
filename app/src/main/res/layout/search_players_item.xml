@@ -10,6 +10,8 @@
         android:layout_height="44dp"
         android:id="@+id/searchPlayerName"
         android:padding="4dp"
+        android:background="@color/surface_surface_0"
+        style="@style/BodyLargeNLv1Left"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

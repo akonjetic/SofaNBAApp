@@ -56,4 +56,29 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/team_celtics_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:tabIndicatorColor="@color/color_secondary"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/on_color_on_color_primary"
+        app:tabTextAppearance="@style/ButtonLabelOnSurfaceCenter"
+        app:tabTextColor="@color/on_color_on_color_secondary" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

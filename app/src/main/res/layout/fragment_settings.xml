@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/surface_surface_0"
     tools:context=".fragment.SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/nba_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:src="@drawable/ic_assets_exportable_logos_nba_nba_icon" />
+
+        <TextView
+            style="@style/HeadlineMediumOnColorLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mainFragmentTitle4"
+            android:layout_marginStart="42dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/aboutCV"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/surface_surface_1"
+        app:cardCornerRadius="16dp"
+        app:contentPadding="10dp"
+        card_view:cardUseCompatPadding="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:text="@string/aboutTitle"
+            style="@style/HeadlineMediumNLv1Left"
+            android:layout_marginHorizontal="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/aboutText"
+            android:layout_marginTop="32dp"
+            style="@style/BodyMediumNLv1Left"
+            android:layout_marginHorizontal="16dp"/>
+
+        <TextView
+            android:id="@+id/moreInfoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            style="@style/ButtonLabelPrimaryCenter"
+            android:text="@string/aboutWeb"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="116dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/clearFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/settings_clear_button_background"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/aboutCV"
+        style="@style/ButtonLabelErrorCenter"
+        android:layout_marginTop="24dp"
+        android:padding="8dp"
+        android:text="@string/settingsButtonClear"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

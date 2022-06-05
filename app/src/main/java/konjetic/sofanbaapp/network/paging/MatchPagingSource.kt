@@ -19,15 +19,13 @@ class MatchPagingSource(val service: BallDontLieService) : PagingSource<Int, Mat
             val nextPageNumber = params.key ?: 0
             val response = service.getAllGames(20, nextPageNumber)
 
-
             LoadResult.Page(
                 data = response.data,
                 prevKey = null,
                 nextKey = response.meta.next_page
             )
-        } catch (e: Exception){
+        } catch (e: Exception) {
             LoadResult.Error(e)
         }
     }
-
 }

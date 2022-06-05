@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/surface_surface_0"
     tools:context=".fragment.FavoritesFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -18,12 +20,18 @@
         app:layout_constraintTop_toTopOf="parent"
         >
 
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_assets_exportable_logos_nba_nba_icon"/>
+
         <TextView
             android:layout_width="176dp"
             android:layout_height="24dp"
-            android:layout_marginLeft="24dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
+            android:text="@string/mainFragmentTitle2"
             style="@style/HeadlineMediumOnColorLeft"/>
 
 
@@ -33,41 +41,79 @@
             android:layout_height="24dp"
             android:layout_gravity="right"
             android:layout_marginLeft="24dp"
+            android:src="@drawable/editable_selector"
             android:layout_marginRight="24dp"/>
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sectionTitlePlayers"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintBottom_toTopOf="@id/recycler_viewP"
-        android:text="@string/favorite_title1"/>
-    <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintTop_toBottomOf="@id/sectionTitlePlayers"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintHeight="312dp"
-        android:id="@+id/recycler_viewP"
-        android:background="@color/surface_surface_0"
-        android:nestedScrollingEnabled="false"
-        android:padding="16dp"/>
+        android:layout_height="match_parent">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/playersConstraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/sectionTitleTeams"
-        app:layout_constraintTop_toBottomOf="@id/recycler_viewP"
+        app:layout_constraintTop_toTopOf="parent">
+    <TextView
+        android:id="@+id/sectionTitlePlayers"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/favorite_title1"
+        android:padding="14dp"
+        style="@style/HeadlineSmallNLv2Left"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+        <include
+            android:id="@+id/placeholderPlayers"
+            layout="@layout/empty_favorites_player_item"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitlePlayers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_viewP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:background="@color/surface_surface_0"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitlePlayers"
+            tools:layout_editor_absoluteX="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/favorite_title2"
+        android:padding="14dp"
+        style="@style/HeadlineSmallNLv2Left"
+        app:layout_constraintTop_toBottomOf="@id/playersConstraint"
         app:layout_constraintBottom_toTopOf="@id/recycler_viewT"
-        android:text="@string/favorite_title2"/>
+        android:id="@+id/sectionTitleTeams"/>
     <androidx.recyclerview.widget.RecyclerView
         app:layout_constraintTop_toBottomOf="@id/sectionTitleTeams"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintHeight="312dp"
         android:id="@+id/recycler_viewT"
+        android:nestedScrollingEnabled="false"
         android:background="@color/surface_surface_0"
-        android:padding="16dp"/>
+        android:paddingBottom="56dp"
+        android:layout_marginHorizontal="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <include
+            android:id="@+id/placeholderTeams"
+            layout="@layout/empty_favorites_player_item"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitleTeams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

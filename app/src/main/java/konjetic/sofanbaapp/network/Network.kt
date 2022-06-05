@@ -6,6 +6,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 class Network {
 
@@ -19,7 +20,7 @@ class Network {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BASIC
         val httpClient = OkHttpClient.Builder().addInterceptor(interceptor)
-
+        httpClient.readTimeout(30, TimeUnit.SECONDS)
         val retrofitBallDontLie = Retrofit.Builder().baseUrl(ballDontLieUrl).addConverterFactory(GsonConverterFactory.create())
             .client(httpClient.build()).build()
 

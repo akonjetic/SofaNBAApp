@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/card_shaper"
+    android:id="@+id/statsLayout">
+
+    <include
+        android:id="@+id/matchResItem"
+        layout="@layout/match_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="8dp"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="8dp"
+        android:background="@color/neutrals_n_lv_3"
+        app:layout_constraintTop_toBottomOf="@id/matchResItem" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/topRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:justifyContent="space_evenly"
+        app:layout_constraintTop_toBottomOf="@id/divider">
+
+        <include
+            android:id="@+id/fgPct"
+            layout="@layout/stats_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/fg3Pct"
+            layout="@layout/stats_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/reb"
+            layout="@layout/stats_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/bottomRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:justifyContent="space_evenly"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topRow">
+
+        <include
+            android:id="@+id/ast"
+            layout="@layout/stats_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/tov"
+            layout="@layout/stats_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/oreb"
+            layout="@layout/stats_cell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

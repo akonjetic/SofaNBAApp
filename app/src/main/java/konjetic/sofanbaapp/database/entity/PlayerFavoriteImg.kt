@@ -12,4 +12,3 @@ data class PlayerFavoriteImg(
 ) {
     constructor() : this(0, "", "")
 }
-

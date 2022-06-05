@@ -14,5 +14,4 @@ object MatchDiff : DiffUtil.ItemCallback<MatchResponseData>() {
     ): Boolean {
         return oldItem == newItem
     }
-
 }

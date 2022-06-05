@@ -3,8 +3,9 @@ package konjetic.sofanbaapp.network.paging
 import androidx.recyclerview.widget.DiffUtil
 import konjetic.sofanbaapp.network.model.PlayersResponseData
 
-object PlayerDiff: DiffUtil.ItemCallback<PlayersResponseData>() {
-   override fun areItemsTheSame(
+object PlayerDiff : DiffUtil.ItemCallback<PlayersResponseData>() {
+
+    override fun areItemsTheSame(
         oldItem: PlayersResponseData,
         newItem: PlayersResponseData
     ): Boolean {
@@ -17,5 +18,4 @@ object PlayerDiff: DiffUtil.ItemCallback<PlayersResponseData>() {
     ): Boolean {
         return oldItem == newItem
     }
-
 }

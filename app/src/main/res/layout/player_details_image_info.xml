@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_surface_0"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/card_shaper"
+        app:layout_constraintTop_toTopOf="parent">
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="336dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/image_cardView"
+        android:layout_width="328dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="-54dp"
+        android:layout_marginHorizontal="16dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialCardView.Cut"
+        app:layout_constraintStart_toStartOf="@id/viewpager"
+        app:layout_constraintEnd_toEndOf="@id/viewpager"
+        app:layout_constraintTop_toBottomOf="@id/viewpager"
+        app:cardBackgroundColor="@color/overlay_overlay">
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:elevation="4dp"/>
+        <ImageView
+            android:id="@+id/addPhoto"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_assets_exportable_icons_add_photo"
+            android:layout_gravity="right"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="12dp"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <include
+        android:id="@+id/teamLogo"
+        layout="@layout/team_logo_layout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="@id/viewpager"
+        app:layout_constraintTop_toBottomOf="@id/viewpager" />
+
+    <TextView
+        android:id="@+id/teamTitle"
+        style="@style/DescriptionNLv2Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textAllCaps="true"
+        android:text="@string/playerDetailsSubtitle"
+        app:layout_constraintStart_toEndOf="@id/teamLogo"
+        app:layout_constraintTop_toBottomOf="@id/viewpager" />
+
+    <TextView
+        android:id="@+id/teamName"
+        style="@style/HeadlineMediumNLv1Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/teamLogo"
+        app:layout_constraintTop_toBottomOf="@id/teamTitle"/>
+
+    <ImageView
+        android:id="@+id/playerPosition"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_assets_exportable_icons_player"
+        app:layout_constraintBottom_toBottomOf="@id/teamLogo"
+        app:layout_constraintStart_toEndOf="@id/teamLogo" />
+
+    <TextView
+        android:id="@+id/positionName"
+        style="@style/AssistiveNLv1Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="@id/teamLogo"
+        app:layout_constraintStart_toEndOf="@id/playerPosition" />
+
+    <include
+        android:id="@+id/separatedInfo"
+        layout="@layout/bottom_sub_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/viewpager"
+        app:layout_constraintTop_toBottomOf="@id/teamLogo" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

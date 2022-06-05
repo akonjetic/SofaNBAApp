@@ -7,17 +7,18 @@ import androidx.room.RoomDatabase
 import konjetic.sofanbaapp.database.entity.PlayerData
 import konjetic.sofanbaapp.database.entity.PlayerFavoriteImg
 import konjetic.sofanbaapp.database.entity.TeamData
+import konjetic.sofanbaapp.database.entity.TeamInfo
 
-@Database(entities = [PlayerData::class, PlayerFavoriteImg::class, TeamData::class], version = 4, exportSchema = false)
+@Database(entities = [PlayerData::class, PlayerFavoriteImg::class, TeamData::class, TeamInfo::class], version = 7, exportSchema = false)
 abstract class NBADatabase : RoomDatabase() {
 
     abstract fun getNBADao(): NBADao
 
-    companion object{
+    companion object {
         private var instance: NBADatabase? = null
 
-        fun getDatabase(context: Context) : NBADatabase?{
-            if(instance == null){
+        fun getDatabase(context: Context): NBADatabase? {
+            if (instance == null) {
                 instance = buildDatabase(context)
             }
             return instance

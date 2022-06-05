@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:justifyContent="space_evenly"
+    app:alignItems="center">
+
+    <TextView
+        android:id="@+id/homeVisitor"
+        style="@style/BodyMediumNLv1Center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="\@" />
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:gravity="center_horizontal"
+        tools:src="@drawable/ic_assets_exportable_logos_club_logos_eastern_conference_boston_celtics_transparent" />
+
+    <TextView
+        android:id="@+id/abbrev"
+        style="@style/BodyMediumNLv1Center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        tools:text="CLT" />
+
+</com.google.android.flexbox.FlexboxLayout>

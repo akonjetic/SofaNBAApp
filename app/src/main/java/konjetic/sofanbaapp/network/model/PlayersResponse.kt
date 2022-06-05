@@ -1,14 +1,12 @@
 package konjetic.sofanbaapp.network.model
 
+import konjetic.sofanbaapp.database.entity.PlayerData
 import java.io.Serializable
 
-data class PlayersResponse (
+data class PlayersResponse(
     val data: ArrayList<PlayersResponseData>,
-    val meta: PlayersResponseMeta,
-    //val results : ArrayList<PlayersResponse>
-): Serializable
-
-
+    val meta: PlayersResponseMeta
+) : Serializable
 
 data class PlayersResponseData(
     val id: Long,
@@ -17,19 +15,16 @@ data class PlayersResponseData(
     val position: String,
     val height_feet: Int,
     val height_inches: Int,
-    val team: PlayersResponseDataTeam,
+    val team: TeamResponseData,
     val weight_pounds: Int
-) : Serializable
+) : Serializable {
 
-data class PlayersResponseDataTeam(
-    val id: Long,
-    val abbreviation: String,
-    val city: String,
-    val conference: String,
-    val division: String,
-    val full_name: String,
-    val name: String
-): Serializable
+    fun toPlayerData(position: Int): PlayerData {
+        return PlayerData(
+            id, first_name, last_name, this.position, height_feet, height_inches, team.toTeamInfo(), weight_pounds, position
+        )
+    }
+}
 
 data class PlayersResponseMeta(
     val total_pages: Int,
@@ -37,10 +32,10 @@ data class PlayersResponseMeta(
     val next_page: Int,
     val per_page: Int,
     val total_count: Int
-): Serializable
+) : Serializable
 
 data class PlayerImgResponse(
-    val data : ArrayList<PlayerImgResponseData>
+    val data: ArrayList<PlayerImgResponseData>
 )
 
 data class PlayerImgResponseData(
@@ -49,3 +44,9 @@ data class PlayerImgResponseData(
     val imageCaption: String,
     val id: Long
 )
+
+data class PlayerImgPost(
+    val playerId: Long,
+    val imageUrl: String,
+    val imageCaption: String
+) : Serializable

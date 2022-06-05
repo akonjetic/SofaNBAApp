@@ -5,13 +5,11 @@ import konjetic.sofanbaapp.network.model.PlayersResponseData
 
 class PlayerHelper {
 
-    fun getFullName (player : PlayersResponseData) : String{
+    fun getFullName(player: PlayersResponseData): String {
         return "${player.first_name} ${player.last_name}"
     }
 
-    fun getFullNamePD (player : PlayerData) : String {
+    fun getFullNamePD(player: PlayerData): String {
         return "${player.first_name} ${player.last_name}"
     }
-
-
 }

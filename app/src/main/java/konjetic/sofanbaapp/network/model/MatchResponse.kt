@@ -5,8 +5,8 @@ import konjetic.sofanbaapp.network.model.TeamResponseData
 import java.io.Serializable
 
 data class MatchResponse(
-    val data : ArrayList<MatchResponseData>,
-    val meta : PlayersResponseMeta
+    val data: ArrayList<MatchResponseData>,
+    val meta: PlayersResponseMeta
 ) : Serializable
 
 data class MatchResponseData(
@@ -21,5 +21,4 @@ data class MatchResponseData(
     val time: String,
     val visitor_team: TeamResponseData,
     val visitor_team_score: Int
-)
-
+) : Serializable

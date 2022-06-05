@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filterLayout"
+    android:elevation="12dp"
+    android:background="@color/surface_surface_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <ImageView
+        android:id="@+id/filterIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_assets_exportable_icons_filter"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginVertical="12dp"
+        android:layout_marginHorizontal="8dp"
+        app:tint="@color/neutrals_n_lv_3" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/teamFilterValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        app:cardBackgroundColor="@color/surface_surface_2"
+        android:layout_toEndOf="@id/filterIcon"
+        android:layout_marginEnd="4dp"
+        android:layout_marginVertical="8dp"
+        app:cardCornerRadius="16dp">
+
+        <TextView
+            android:id="@+id/teamsFilterValueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AssistiveNLv1Center"
+            android:paddingEnd="32dp"
+            android:text="LOS ANGELES LAKERS"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/teamsFilterDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="right"
+            android:layout_marginVertical="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_assets_exportable_icons_close"
+            app:tint="@color/neutrals_n_lv_1" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/seasonFilterCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp"
+        app:cardBackgroundColor="@color/surface_surface_2"
+        android:layout_toEndOf="@id/teamFilterValue"
+        android:layout_marginVertical="8dp"
+        app:cardCornerRadius="16dp">
+
+        <TextView
+            android:id="@+id/seasonsFilterValueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/AssistiveNLv1Center"
+            android:paddingEnd="32dp"
+            android:text="LOS ANGELES LAKERS"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/seasonsFilterDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="right"
+            android:layout_marginVertical="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_assets_exportable_icons_close"
+            app:tint="@color/neutrals_n_lv_1" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

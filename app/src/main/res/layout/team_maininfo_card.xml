@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/teamLogo"
+        layout="@layout/team_logo_layout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/teamAbbrev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/teamLogo"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:text="BOS"
+        style="@style/DescriptionNLv2Left"/>
+
+    <TextView
+        android:id="@+id/teamFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/teamAbbrev"
+        style="@style/HeadlineMediumNLv1Left"
+        android:text="Boston Celtics"
+        android:layout_toEndOf="@id/teamLogo"
+        android:layout_marginStart="16dp"/>
+
+    <ImageView
+        android:id="@+id/pinIcon"
+        android:layout_width="16dp"
+        android:layout_height="17dp"
+        android:src="@drawable/ic_assets_exportable_icons_maps_pin"
+        android:layout_toEndOf="@id/teamLogo"
+        android:layout_alignBottom="@id/teamLogo"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/cityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BOSTON"
+        android:layout_toEndOf="@id/pinIcon"
+        android:layout_alignBottom="@id/pinIcon"
+        android:layout_marginStart="4dp"
+        android:padding="0dp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StatsTableRow">
+        <attr name="statLabel" format="string"/>
+        <attr name="s1Label" format="string"/>
+        <attr name="s2Label" format="string"/>
+        <attr name="s3Label" format="string"/>
+        <attr name="s4Label" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="AboutTextView">
+        <attr name="titleText" format="string"/>
+        <attr name="valueText" format="string"/>
+    </declare-styleable>
+</resources>

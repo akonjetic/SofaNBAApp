@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="16dp"
+        card_view:cardUseCompatPadding="true"
+        android:background="@color/surface_surface_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/nbaLogo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/surface_surface_1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                card_view:cardUseCompatPadding="true">
+
+                <ImageView
+                    android:id="@+id/logo_image"
+                    android:layout_width="44dp"
+                    android:layout_height="37dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginVertical="11dp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/team1_abbrev"
+                android:layout_width="68dp"
+                android:layout_height="16dp"
+                android:layout_below="@id/nbaLogo"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/dateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="22dp"
+                android:layout_marginTop="12dp"
+
+                android:layout_toStartOf="@id/nbaLogo2"
+                android:layout_toEndOf="@id/nbaLogo"
+                android:textAlignment="center"/>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/nbaLogo2"
+                xmlns:card_view="http://schemas.android.com/tools"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="16dp"
+                card_view:cardUseCompatPadding="true"
+                android:background="@color/surface_surface_1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp">
+
+                <ImageView
+                    android:id="@+id/logo_image2"
+                    android:layout_width="41dp"
+                    android:layout_height="41dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginVertical="11dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/team2_abbrev"
+                android:layout_width="68dp"
+                android:layout_height="16dp"
+                android:layout_below="@id/nbaLogo2"
+                android:layout_alignStart="@id/nbaLogo2"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"/>
+
+
+            <TextView
+                android:id="@+id/team1_result"
+                android:layout_width="56dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/dateText"
+                android:layout_marginLeft="30dp"
+                android:layout_toEndOf="@id/nbaLogo"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="4sp"
+                android:textColor="@color/neutrals_n_lv_2"
+                android:textSize="28sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/result_separator"
+                style="@style/DisplayLargeNLv1Center"
+                android:layout_width="24dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/dateText"
+                android:layout_toStartOf="@id/nbaLogo2"
+                android:layout_toEndOf="@id/nbaLogo"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/team2_result"
+                android:layout_width="56dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/dateText"
+                android:layout_toStartOf="@id/nbaLogo2"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="4sp"
+                android:textColor="@color/neutrals_n_lv_2"
+                android:textSize="28sp"
+                android:textStyle="normal"
+                android:layout_marginRight="30dp"/>
+
+            <TextView
+                android:id="@+id/matchType"
+                style="@style/DescriptionNLv2Center"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_below="@id/result_separator"
+                android:layout_marginHorizontal="52dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toStartOf="@id/team2_abbrev"
+                android:layout_toEndOf="@id/team1_abbrev"
+                android:textAlignment="center"/>
+
+
+        </RelativeLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

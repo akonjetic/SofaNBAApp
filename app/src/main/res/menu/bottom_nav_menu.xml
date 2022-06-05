@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_explore"
+        android:icon="@drawable/ic_assets_exportable_icons_sports_basketball_fill"
+        android:title="@string/bottomNavFragment1"/>
+
+    <item
+        android:id="@+id/ic_favorites"
+        android:icon="@drawable/ic_assets_exportable_icons_star_full"
+        android:title="@string/bottomNavFragment2"/>
+
+    <item
+        android:id="@+id/ic_seasons"
+        android:icon="@drawable/ic_assets_exportable_icons_calendar"
+        android:title="@string/bottomNavFragment3"/>
+
+    <item
+        android:id="@+id/ic_settings"
+        android:icon="@drawable/ic_assets_exportable_icons_settings"
+        android:title="@string/bottomNavFragment4"/>
+</menu>

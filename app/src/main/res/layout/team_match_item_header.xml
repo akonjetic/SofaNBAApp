@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/dateHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:text="DATUM GODINA"
+        style="@style/HeadlineSmallNLv2Left"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <include
+        android:id="@+id/matchResCard"
+        layout="@layout/team_match_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dateHeader"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

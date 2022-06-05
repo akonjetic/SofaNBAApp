@@ -36,6 +36,7 @@ class SeasonFilterBottomSheetFragment(private val pagingAdapter: MatchPagingAdap
         _binding = BottomSheetLayoutSeasonsFragmentBinding.inflate(inflater, container, false)
 
         viewModel.getAllTeamsFromDB(requireContext())
+        setupDialog()
 
         viewModel.allTeamsFromDB.observe(viewLifecycleOwner) {
             teamsList.clear()
@@ -108,6 +109,11 @@ class SeasonFilterBottomSheetFragment(private val pagingAdapter: MatchPagingAdap
     override fun onResume() {
         viewModel.getAllTeamsFromDB(requireContext())
         super.onResume()
+    }
+
+    fun setupDialog(){
+        binding.header.headerTitle.text = getString(R.string.bottomSheetPlayerSeasonTitle)
+        binding.bottomButtons.addButton.text = getString(R.string.bottomSheetPlayerSeasonButton)
     }
 
     private fun setupSpinnerSeasons() {

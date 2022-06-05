@@ -275,6 +275,8 @@ class SeasonsFragment : Fragment() {
         super.onResume()
     }
 
+
+
     fun setupPlaceholder() {
         binding.placeholderEmpty.placeholderText.text = getString(R.string.placeholderFilter1)
     }

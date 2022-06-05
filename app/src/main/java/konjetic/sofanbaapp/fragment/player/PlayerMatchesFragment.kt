@@ -69,9 +69,6 @@ class PlayerMatchesFragment : Fragment() {
 
         viewModel.getSeasonRange(player.id)
 
-        val progressDialog = ProgressDialog(requireContext())
-        progressDialog.setTitle("Loading")
-        progressDialog.show()
 
         viewModel.seasonsRange.observe(viewLifecycleOwner) { seasons ->
             PlayerActivity.season = seasons[1]
@@ -83,7 +80,6 @@ class PlayerMatchesFragment : Fragment() {
                         pagingAdapter.submitData(PagingData.empty())
                         pagingAdapter.updateTeamsList(teams)
                         pagingAdapter.submitData(stats)
-                        progressDialog.dismiss()
                     }
                 }
             }
@@ -108,7 +104,6 @@ class PlayerMatchesFragment : Fragment() {
         binding.headerAction.buttonRegular.isSelected = true
 
         binding.headerAction.buttonRegular.setOnClickListener {
-            progressDialog.show()
             if (binding.headerAction.buttonPlayoffs.isSelected) {
                 binding.headerAction.buttonPlayoffs.isSelected = false
                 playoff = false
@@ -132,14 +127,12 @@ class PlayerMatchesFragment : Fragment() {
                         pagingAdapter.submitData(PagingData.empty())
                         pagingAdapter.updateTeamsList(teams)
                         pagingAdapter.submitData(it)
-                        progressDialog.dismiss()
                     }
                 }
             }
         }
 
         binding.headerAction.buttonPlayoffs.setOnClickListener {
-            progressDialog.show()
             if (binding.headerAction.buttonPlayoffs.isSelected) {
                 binding.headerAction.buttonPlayoffs.isSelected = false
                 playoff = false
@@ -163,7 +156,6 @@ class PlayerMatchesFragment : Fragment() {
                         pagingAdapter.submitData(PagingData.empty())
                         pagingAdapter.updateTeamsList(teams)
                         pagingAdapter.submitData(it)
-                        progressDialog.dismiss()
                     }
                 }
             }
